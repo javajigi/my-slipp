@@ -21,7 +21,6 @@ void tearDown(void) {
 void test_str_pair_alloc(void) {
 	strcpy(str_pair->target,TEST_DATA);
 	TEST_ASSERT_EQUAL(0, strcmp(str_pair->target, TEST_DATA));
-	// TEST_ASSERT_NOT_EQUAL(target_result, str_pair->target);
 }
 
 void test_str_pair_str_length(void) {
