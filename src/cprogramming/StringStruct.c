@@ -14,9 +14,10 @@ struct string_pair * alloc_str_pair(int target_size) {
 	return str_pair;
 }
 
+
 void free_str_pair(struct string_pair *str_pair) {
-	free(str_pair);
 	free(str_pair->target);
+	free(str_pair);
 }
 
 int length_str_pair_source(const char *value) {
