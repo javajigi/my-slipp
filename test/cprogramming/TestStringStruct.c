@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "cprogramming/StringStruct.c"
@@ -19,13 +17,14 @@ void tearDown(void) {
 }
 
 void test_str_pair_alloc(void) {
+	str_pair = alloc_str_pair(ALLOC_SIZE);
 	strcpy(str_pair->target,TEST_DATA);
 	TEST_ASSERT_EQUAL(0, strcmp(str_pair->target, TEST_DATA));
 }
 
 void test_str_pair_str_length(void) {
 	int length = length_str_pair_source(TEST_DATA);
-	TEST_ASSERT_EQUAL(9, length);
+	TEST_ASSERT_EQUAL(10, length);
 }
 
 void test_copy_str_pair(void) {
