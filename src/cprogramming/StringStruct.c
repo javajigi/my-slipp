@@ -9,8 +9,8 @@ struct string_pair {
 
 struct string_pair * alloc_str_pair(int target_size) {
 	struct string_pair *str_pair;
-	str_pair = malloc(sizeof(str_pair));
-	str_pair->target = malloc(target_size);
+	str_pair = (struct string_pair *)malloc(sizeof(str_pair));
+	str_pair->target = (char *)malloc(target_size);
 	return str_pair;
 }
 
