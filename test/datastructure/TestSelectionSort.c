@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "datastructure/Sort.c"
+#include "datastructure/SelectionSort.c"
 #include "unity.h"
 
 void setUp(void) {
@@ -18,6 +18,16 @@ void test_swap(void) {
 	swap(&i, &j);
 	TEST_ASSERT_EQUAL(2, i);
 	TEST_ASSERT_EQUAL(1, j);
+}
+
+void test_minimun_index(void) {
+	int values[] = { 2, 1, 3 };
+	int index = minimun_index(values, 0, 3);
+	TEST_ASSERT_EQUAL(1, index);
+
+	int values2[] = {3, 2, 1};
+	index = minimun_index(values2, 0, 3);
+	TEST_ASSERT_EQUAL(2, index);
 }
 
 void test_sort(void) {

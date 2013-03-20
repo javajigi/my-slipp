@@ -41,11 +41,11 @@ void test_search_top_value(void) {
 	TEST_ASSERT_EQUAL(-1, result);
 }
 
-void test_search_index(void) {
+void test_search_middle_index(void) {
 	int values[] = { 1, 2, 3, 4, 5 };
 	int search_num = 3;
 
-	int result = search_index(values, 0, 4, search_num);
+	int result = search_index(values, 5, search_num);
 	TEST_ASSERT_EQUAL(2, result);
 }
 
@@ -53,7 +53,7 @@ void test_search_top_index(void) {
 	int values[] = { 1, 2, 3, 4, 5 };
 	int search_num = 5;
 
-	int result = search_index(values, 0, 4, search_num);
+	int result = search_index(values, 5, search_num);
 	TEST_ASSERT_EQUAL(4, result);
 }
 
@@ -61,7 +61,7 @@ void test_search_bottom_index(void) {
 	int values[] = { 1, 2, 3, 4, 5 };
 	int search_num = 1;
 
-	int result = search_index(values, 0, 4, search_num);
+	int result = search_index(values, 5, search_num);
 	TEST_ASSERT_EQUAL(0, result);
 }
 
@@ -69,6 +69,6 @@ void test_is_not_search_value(void) {
 	int values[] = { 1, 2, 6, 7, 8 };
 	int search_num = 3;
 
-	int result = search_index(values, 0, 4, search_num);
+	int result = search_index(values, 5, search_num);
 	TEST_ASSERT_EQUAL(-1, result);
 }
