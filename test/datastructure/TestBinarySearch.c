@@ -17,30 +17,6 @@ void test_find_middle_index(void) {
 	TEST_ASSERT_EQUAL(5, middle_index);
 }
 
-void test_search_exact_value(void) {
-	int values[] = { 1, 2, 3, 4, 5 };
-	int search_num = 3;
-	int index = 2;
-	int result = search_value(values, search_num, index);
-	TEST_ASSERT_EQUAL(0, result);
-}
-
-void test_search_bottom_value(void) {
-	int values[] = { 1, 2, 3, 4, 5 };
-	int search_num = 3;
-	int index = 1;
-	int result = search_value(values, search_num, index);
-	TEST_ASSERT_EQUAL(1, result);
-}
-
-void test_search_top_value(void) {
-	int values[] = { 1, 2, 3, 4, 5 };
-	int search_num = 3;
-	int index = 3;
-	int result = search_value(values, search_num, index);
-	TEST_ASSERT_EQUAL(-1, result);
-}
-
 void test_search_middle_index(void) {
 	int values[] = { 1, 2, 3, 4, 5 };
 	int search_num = 3;
@@ -63,12 +39,4 @@ void test_search_bottom_index(void) {
 
 	int result = search_index(values, 5, search_num);
 	TEST_ASSERT_EQUAL(0, result);
-}
-
-void test_is_not_search_value(void) {
-	int values[] = { 1, 2, 6, 7, 8 };
-	int search_num = 3;
-
-	int result = search_index(values, 5, search_num);
-	TEST_ASSERT_EQUAL(-1, result);
 }
