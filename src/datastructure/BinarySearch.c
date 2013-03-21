@@ -5,21 +5,21 @@ int find_middle_index(int start, int end) {
 	return start + middle;
 }
 
-int search_index(int *values, int length, int search_num) {
+int search_index(int *values, int search_num, int right) {
 	int left_index = 0;
-	int right_index = length - 1;
+	int right_index = right - 1;
 
 	while (left_index <= right_index) {
 		int middle_index = find_middle_index(left_index, right_index);
 		int value = values[middle_index];
 
+		if (search_num == value) {
+			return middle_index;
+		}
+
 		if (search_num > value) {
 			left_index = middle_index + 1;
 			continue;
-		}
-
-		if (search_num == value) {
-			return middle_index;
 		}
 
 		if (search_num < value) {
@@ -32,7 +32,7 @@ int search_index(int *values, int length, int search_num) {
 }
 
 int search_start_index(int *values, int length, int search_num) {
-	int first_search_index = search_index(values, length, search_num);
+	int first_search_index = search_index(values, search_num, length);
 
 	if (first_search_index == -1) {
 		return -1;
@@ -48,7 +48,7 @@ int search_start_index(int *values, int length, int search_num) {
 }
 
 int search_end_index(int *values, int length, int search_num) {
-	int first_search_index = search_index(values, length, search_num);
+	int first_search_index = search_index(values, search_num, length);
 
 	if (first_search_index == -1) {
 		return -1;

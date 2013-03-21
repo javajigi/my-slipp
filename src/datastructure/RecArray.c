@@ -6,21 +6,21 @@ void swap(char *i, char *j) {
 	*j = temp;
 }
 
-void perm(char *values, int i, int n) {
+void perm(char *values, int start, int end) {
 	int j;
-	if (i == n) {
-		for (j = 0; j < n; j++) {
+	if (start == end) {
+		for (j = 0; j <= end; j++) {
 			printf("%c,", values[j]);
 			printf("     ");
-			if (n == j+1) {
+			if (end == j+1) {
 				printf("\n");
 			}
 		}
 	} else {
-		for (j = i; j < n; j++) {
-			swap(&values[i], &values[j]);
-			perm(values, i+1, n);
-			swap(&values[i], &values[j]);
+		for (j = start; j <= end; j++) {
+			swap(&values[start], &values[j]);
+			perm(values, start+1, end);
+			swap(&values[start], &values[j]);
 		}
 	}
 }
