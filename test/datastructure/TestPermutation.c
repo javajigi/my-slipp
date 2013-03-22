@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "datastructure/RecArray.c"
+#include "datastructure/Permutations.c"
 #include "unity.h"
 
 void setUp(void) {

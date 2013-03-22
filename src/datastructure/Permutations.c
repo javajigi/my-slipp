@@ -12,7 +12,7 @@ void perm(char *values, int start, int end) {
 		for (j = 0; j <= end; j++) {
 			printf("%c,", values[j]);
 			printf("     ");
-			if (end == j+1) {
+			if (j == end) {
 				printf("\n");
 			}
 		}
