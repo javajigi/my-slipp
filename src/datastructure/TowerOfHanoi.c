@@ -18,7 +18,7 @@ struct tower * new_tower(int *values, int new_array_length, int length) {
 	return newTower;
 }
 
-void moveOne(struct tower *source, struct tower *target) {
+void swap(struct tower *source, struct tower *target) {
 	int temp = target->values[target->length];
 	target->values[target->length] = source->values[source->length -1];
 	source->values[source->length - 1] = temp;
@@ -26,28 +26,15 @@ void moveOne(struct tower *source, struct tower *target) {
 	target->length++;
 }
 
-void moveTwo(struct tower* first_tower, struct tower* second_tower, struct tower* third_tower) {
-	moveOne(first_tower, second_tower);
-	moveOne(first_tower, third_tower);
-	moveOne(second_tower, third_tower);
-}
-
-void move(struct tower* first_tower, struct tower* second_tower, struct tower* third_tower, int length) {
-	if (length == 2) {
-		moveTwo(first_tower, second_tower, third_tower);
+void hanoi(struct tower *first_tower, struct tower *second_tower, struct tower *third_tower, int length) {
+	if (length == 1) {
+		swap(first_tower, third_tower);
 		return;
 	}
 
-	move(first_tower, second_tower, third_tower, length - 1);
-	moveOne(first_tower, second_tower);
-	move(third_tower, second_tower, first_tower, length - 1);
-	moveOne(second_tower, third_tower);
-	move(first_tower, second_tower, third_tower, length - 1);
-}
-
-void hanoi(struct tower *first_tower, struct tower *second_tower, struct tower *third_tower, int length) {
-	if (length == 1) {
-		moveOne(first_tower, third_tower);
-	}
-	move(first_tower, second_tower, third_tower, length);
+	hanoi(first_tower, second_tower, third_tower, length - 1);
+	swap(first_tower, second_tower);
+	hanoi(third_tower, second_tower, first_tower, length - 1);
+	swap(second_tower, third_tower);
+	hanoi(first_tower, second_tower, third_tower, length - 1);
 }
