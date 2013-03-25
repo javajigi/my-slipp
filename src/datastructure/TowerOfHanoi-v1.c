@@ -4,12 +4,6 @@ void swap(int *i, int *j) {
 	*j = temp;
 }
 
-void moveTwo(int* firstTower, int* secondTower, int* thirdTower) {
-	swap(firstTower + 1, secondTower);
-	swap(firstTower, thirdTower);
-	swap(secondTower, thirdTower + 1);
-}
-
 void move(int* sourceTower, int sourceLength, int* secondTower,
 		int secondLength, int* targetTower, int targetLength) {
 	swap(sourceTower + sourceLength - 1, secondTower + secondLength);
@@ -27,24 +21,20 @@ void moveThree(int* sourceTower, int sourceLength, int* secondTower,
 }
 
 void hanoi(int *firstTower, int *secondTower, int *thirdTower, int firstLength) {
-	int secondLength = 0;
-	int thirdLength = 0;
 	if (firstLength == 2) {
-		move(firstTower, firstLength, secondTower, secondLength, thirdTower, thirdLength);
+		swap(firstTower + 1, secondTower);
+		swap(firstTower, thirdTower);
+		swap(secondTower, thirdTower + 1);
 	} else if (firstLength == 3) {
-		move(firstTower, firstLength, secondTower, secondLength, thirdTower, thirdLength);
-		firstLength -= 2;
-		thirdLength += 2;
-		swap(firstTower, secondTower);
-		firstLength -= 1;
-		secondLength += 1;
-		move(thirdTower, thirdLength, secondTower, secondLength, firstTower, firstLength);
-		firstLength += 2;
-		thirdLength -= 2;
-		swap(secondTower, thirdTower);
-		secondLength -= 1;
-		thirdLength += 1;
-		move(firstTower, firstLength, secondTower, secondLength, thirdTower, thirdLength);
+		swap(firstTower + 2, thirdTower);
+		swap(firstTower + 1, secondTower);
+		swap(thirdTower, secondTower + 1);
+
+		swap(firstTower, thirdTower);
+
+		swap(secondTower + 1, firstTower);
+		swap(secondTower, thirdTower + 1);
+		swap(firstTower, thirdTower + 2);
 	} else if (firstLength == 4) {
 		move(firstTower, firstLength, secondTower, 0, thirdTower, 0);
 		swap(firstTower + 1, secondTower);
