@@ -20,7 +20,7 @@ void print_combinations(char *values, int start, int end) {
 void combinations_two(char *values, int n, int r) {
 	for(int i=0; i<=r;i++) {
 		swap(values, values + i);
-		print_combinations(values, r-1, r);
+		print_combinations(values, 1, r);
 		swap(values + i, values);
 	}
 }
@@ -28,7 +28,7 @@ void combinations_two(char *values, int n, int r) {
 void combinations_three(char *values, int n, int r) {
 	for(int i=0; i<=r;i++) {
 		swap(values, values + i);
-		print_combinations(values, r-2, r);
+		print_combinations(values, 1, r);
 		swap(values + i, values);
 	}
 }
@@ -36,7 +36,7 @@ void combinations_three(char *values, int n, int r) {
 void combinations_four(char *values, int n, int r) {
 	for(int i=0; i<=r;i++) {
 		swap(values, values + i);
-		print_combinations(values, r-3, r);
+		print_combinations(values, 1, r);
 		swap(values + i, values);
 	}
 }
