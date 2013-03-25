@@ -32,11 +32,19 @@ void hanoi(int *firstTower, int *secondTower, int *thirdTower, int firstLength) 
 	if (firstLength == 2) {
 		move(firstTower, firstLength, secondTower, secondLength, thirdTower, thirdLength);
 	} else if (firstLength == 3) {
-		move(firstTower, firstLength, secondTower, 0, thirdTower, 0);
-		swap(firstTower + (firstLength-3), secondTower);
-		move(thirdTower, firstLength - 1, secondTower, 1, firstTower, 0);
+		move(firstTower, firstLength, secondTower, secondLength, thirdTower, thirdLength);
+		firstLength -= 2;
+		thirdLength += 2;
+		swap(firstTower, secondTower);
+		firstLength -= 1;
+		secondLength += 1;
+		move(thirdTower, thirdLength, secondTower, secondLength, firstTower, firstLength);
+		firstLength += 2;
+		thirdLength -= 2;
 		swap(secondTower, thirdTower);
-		move(firstTower, firstLength - 1, secondTower, 0, thirdTower, 1);
+		secondLength -= 1;
+		thirdLength += 1;
+		move(firstTower, firstLength, secondTower, secondLength, thirdTower, thirdLength);
 	} else if (firstLength == 4) {
 		move(firstTower, firstLength, secondTower, 0, thirdTower, 0);
 		swap(firstTower + 1, secondTower);
