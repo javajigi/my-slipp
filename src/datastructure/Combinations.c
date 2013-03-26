@@ -6,37 +6,28 @@ void swap(char *i, char *j) {
 	*j = temp;
 }
 
-void print_combinations(char *values, int start, int end) {
-	for (int i = start; i <= end; i++) {
-		printf(" %c", values[i]);
-		if (i == end) {
-			printf(" \n");
-		} else {
-			printf(", ");
+void combinations_one(char *values, int n, int r, int original_n) {
+	for (int i = 0; i <= n - 1; i++) {
+		if (r == 1) {
+			printf(" %c ", values[i]);
+			printf(", %c \n", values[original_n-1]);
 		}
 	}
 }
 
-void combinations_two(char *values, int n, int r) {
-	for (int start = 0; start <= n - r + 1; start++) {
-		for (int i = start; i <= n - r; i++) {
-			printf(" %c, %c\n", values[start], values[i + 1]);
-		}
+void combinations_two(char *values, int n, int r, int original_n) {
+	if (original_n == 1) {
+		return;
 	}
+	combinations_one(values, n - 1, r - 1, original_n);
+	combinations_two(values, n - 1, r, original_n - 1);
 }
 
-void combinations_three(char *values, int n, int r) {
-	for (int i = 0; i < n; i++) {
-		swap(values, values + i);
-		print_combinations(values, 1, r);
-		swap(values + i, values);
+void combinations_three(char *values, int n, int r, int original_n) {
+	if (original_n == 1) {
+		return;
 	}
+	combinations_two(values, n - 1, r - 1, original_n);
+	combinations_three(values, n - 1, r, original_n - 1);
 }
 
-void combinations_four(char *values, int n, int r) {
-	for (int i = 0; i <= r; i++) {
-		swap(values, values + i);
-		print_combinations(values, 1, r);
-		swap(values + i, values);
-	}
-}
