@@ -31,10 +31,7 @@ void hanoi(struct tower *first_tower, struct tower *second_tower, struct tower *
 		swap(first_tower, third_tower);
 		return;
 	}
-
-	hanoi(first_tower, second_tower, third_tower, length - 1);
-	swap(first_tower, second_tower);
-	hanoi(third_tower, second_tower, first_tower, length - 1);
-	swap(second_tower, third_tower);
-	hanoi(first_tower, second_tower, third_tower, length - 1);
+	hanoi(first_tower, third_tower, second_tower, length -1);
+	swap(first_tower, third_tower);
+	hanoi(second_tower, first_tower, third_tower, length -1);
 }
