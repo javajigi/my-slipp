@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "datastructure/Combinations.c"
+#include "datastructure/combinations/Combinations.c"
 #include "unity.h"
 
 void setUp(void) {

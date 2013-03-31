@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "datastructure/BinarySearch.c"
+#include "datastructure/binarysearch/BinarySearch.c"
 #include "unity.h"
 
 void setUp(void) {

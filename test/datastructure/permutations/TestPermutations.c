@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "datastructure/Permutations.c"
+#include "datastructure/permutations/Permutations.c"
 #include "unity.h"
 
 void setUp(void) {
