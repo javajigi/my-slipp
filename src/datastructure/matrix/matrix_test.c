@@ -98,9 +98,6 @@ void testMatrixMulti(void)
 		printf("Fail to matrix multiplication\n");
 }
 
-//
-// matrix tranpose �׽�Ʈ �Լ�
-//
 void testMatrixTranspose(void)
 {
 	int **matrixA;

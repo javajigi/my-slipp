@@ -22,9 +22,6 @@ typedef struct list {
 	struct list *next;
 } list_t;
 
-//
-// call by value·Î µÎ »ç¶÷ÀÇ Á¤º¸¸¦ ÀÔ·Â¹Þ¾Æ¼­ µÎ »ç¶÷ÀÇ ¾Æ´Ï, ±Þ¿©, ÀÌ¸§ÀÌ °°ÀºÁö °Ë»çÇÏ´Â ÇÔ¼ö
-//
 int humansEqualByCallByValue(humanBeing_t person1, humanBeing_t person2)
 {
 	if(person1.age != person2.age)
@@ -39,9 +36,6 @@ int humansEqualByCallByValue(humanBeing_t person1, humanBeing_t person2)
 	return 1;
 }
 
-//
-// call by reference·Î µÎ »ç¶÷ÀÇ Á¤º¸¸¦ ÀÔ·Â¹Þ¾Æ¼­ µÎ »ç¶÷ÀÇ ¾Æ´Ï, ±Þ¿©, ÀÌ¸§ÀÌ °°ÀºÁö °Ë»çÇÏ´Â ÇÔ¼ö
-//
 int humansEqualByCallByReference(humanBeing_t *person1, humanBeing_t *person2)
 {
 	if(person1->age != person2->age)
@@ -70,16 +64,16 @@ void testStructures(void)
 	person2.salary = 200;
 
 	if(humansEqualByCallByValue(person1, person2)) {
-		printf("µÎ »ç¶÷Àº ÀÌ¸§, ³ªÀÌ, ±Þ¿©°¡ °°À½\n");
+		printf("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½Þ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½\n");
 	}
 	else
-		printf("µÎ»ç¶÷Àº ³ªÀÌ, ±Þ¿©, ÀÌ¸§ Áß ÇÏ³ª°¡ ´Ù¸§\n");
+		printf("ï¿½Î»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Þ¿ï¿½, ï¿½Ì¸ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½\n");
 
 	if(humansEqualByCallByReference(&person1, &person2)) {
-		printf("µÎ »ç¶÷Àº ÀÌ¸§, ³ªÀÌ, ±Þ¿©°¡ °°À½\n");
+		printf("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½Þ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½\n");
 	}
 	else
-		printf("µÎ»ç¶÷Àº ³ªÀÌ, ±Þ¿©, ÀÌ¸§ Áß ÇÏ³ª°¡ ´Ù¸§\n");
+		printf("ï¿½Î»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Þ¿ï¿½, ï¿½Ì¸ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½\n");
 
 }
 

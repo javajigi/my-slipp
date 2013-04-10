@@ -1,14 +1,3 @@
-/*
-   작성자: 김동진
-   작성일: 2013.03.30
-   주제: array와 structure 사용 예제
-   상세 내용
-       1. 2D array 사용예제
-	   2. structure 사용 예제
-	   3. typedef 사용 예제
-	   4. matrices 사용 예제
-*/
-
 #include <stdio.h>
 
 extern void testMake2DArray(void);
