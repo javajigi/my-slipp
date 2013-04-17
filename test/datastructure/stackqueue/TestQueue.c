@@ -6,7 +6,7 @@
 int *queues;
 void setUp(void) {
 	int max_size = 2;
-	queues = createQueue(max_size);
+	queues = initialize(max_size);
 }
 
 void tearDown(void) {

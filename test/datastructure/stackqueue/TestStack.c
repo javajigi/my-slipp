@@ -4,6 +4,7 @@
 #include "unity.h"
 
 int *stacks;
+
 void setUp(void) {
 	int max_size = 2;
 	stacks = createStack(max_size);

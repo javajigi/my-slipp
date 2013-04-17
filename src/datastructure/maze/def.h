@@ -1,0 +1,1 @@
+#define	MAZE_TEMPLATE	0
